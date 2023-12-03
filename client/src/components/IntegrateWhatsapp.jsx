@@ -12,6 +12,10 @@ export default function IntegrateWhatsapp() {
 
     const [qrCode, setQrCode] = useState("");
     const [disable, setDisable] = useState(false);
+    const [urlNotion, setUrlNotion] = useState('')
+    const toastId = useRef(null);
+
+
     socket.on("qr", (data) => {
         const { qr } = data;
         console.log("QR RECEIVED", qr);
@@ -19,19 +23,40 @@ export default function IntegrateWhatsapp() {
     });
 
     socket.on("ready", () => {
-        toast.success("All Set, Try Sending Message!", {
+        toast.success("All Set, wait for LAST NOTIFICATION!", {
             position: toast.POSITION.TOP_CENTER,
             draggable: false
         });
+        toast.dismiss(toastId)
+
+    })
+
+    socket.on("groupConnected", (groupId) => {
+        setTimeout(() => {
+            console.log(groupId)
+            toast.info("Group is connected too!", {
+                position: toast.POSITION.TOP_CENTER,
+                draggable: false
+            });
+        }, 3000)
+
+    })
+
+    socket.on('notionPage', (notionResp) => {
+        const { url } = notionResp;
+        alert("Page added")
+        setUrlNotion(url)
     })
 
     const handleSubmit = () => {
         setDisable(true)
+        toastId.current = toast.loading("Trying to Connect!", {
+            position: toast.POSITION.TOP_LEFT,
+            draggable: false,
+
+        });
         socket.emit("createSession", () => {
-            toast.loading("All Set, Getting QRCODE!", {
-                position: toast.POSITION.TOP_CENTER,
-                draggable: false
-            });
+            console.log("rendering")
         }
         )
 
@@ -40,11 +65,12 @@ export default function IntegrateWhatsapp() {
 
     return (
 
-        <div class="lg:col-span-2">
+        <div className="lg:col-span-2">
+
             <h1 className="text-4xl font-bold">Integrate Whatsapp <span className="text-lg font-normal"> (Scan the QR code)</span> </h1>
             <div className="grid gap-4 gap-y-2 text-xl mt-5  md:flex flex-col">
                 {!qrCode ? (
-                    <div class="animate-pulse rounded-sm bg-slate-300 h-72 w-80"></div>
+                    <div className="animate-pulse rounded-sm bg-slate-300 h-72 w-80"></div>
                 ) : (
                     <QRCode value={qrCode} className="" />
                 )}
@@ -62,7 +88,7 @@ export default function IntegrateWhatsapp() {
                             </button>
                         )}
 
-
+                        <label>{urlNotion}</label>
                         <ToastContainer />
                     </div>
                 </div>

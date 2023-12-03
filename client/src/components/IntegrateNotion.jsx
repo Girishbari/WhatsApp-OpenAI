@@ -28,11 +28,14 @@ export default function IntegrateNotion() {
                 groupName: dataRef.current.groupName
             }).then((res) => {
                 console.log(res)
-                toast.success("Data Update !", {
+                setTimeout(() => {
+                    navigate("/whatsappintegration")
+                }, 2000)
+                toast.success("Data Updated !", {
                     position: toast.POSITION.TOP_CENTER,
                     draggable: false
                 });
-                navigate("/whatsappintegration")
+
             })
 
 
@@ -48,21 +51,21 @@ export default function IntegrateNotion() {
             <div className="grid gap-4 gap-y-2 text-xl mt-5  md:grid-cols-5">
                 <div className="md:col-span-5">
 
-                    <label for="full_name">Database ID</label>
+                    <label >Database ID</label>
                     <input type="text"
                         onChange={(e) => dataRef.current.dbID = e.target.value}
                         defaultValue={dataRef.current.dbID}
                         name="full_name" id="full_name" className="h-10 border mt-1 rounded px-4 w-full bg-gray-50" />
                 </div>
                 <div className="md:col-span-5">
-                    <label for="full_name">Notion Token</label>
+                    <label >Notion Token</label>
                     <input type="text"
                         onChange={(e) => dataRef.current.NOTION_TOKEN = e.target.value}
                         defaultValue={dataRef.current.NOTION_TOKEN}
                         name="full_name" id="full_name" className="h-10 border mt-1 rounded px-4 w-full bg-gray-50" />
                 </div>
                 <div className="md:col-span-5">
-                    <label for="full_name">WhatsApp Group name <span className="text-lg font-light"> (make one where you generally send your notes)</span> </label>
+                    <label >WhatsApp Group name <span className="text-lg font-light"> (make one where you generally send your notes)</span> </label>
                     <input type="text"
                         onChange={(e) => dataRef.current.groupName = e.target.value}
                         name="full_name" id="full_name" className="h-10 border mt-1 rounded px-4 w-full bg-gray-50" defaultValue={dataRef.current.groupName} />

@@ -1,21 +1,10 @@
 import { useEffect, useState } from 'react'
-import io from "socket.io-client"
-import QRCode from "react-qr-code";
 import "./App.css"
 import { NotionSetup, IntegrateNotion, IntegrateWhatsapp } from "./components/index"
 import { Routes, Route } from "react-router-dom"
 
-var socket = io('http://localhost:3000', { transports: ['websocket', 'polling', 'flashsocket'] });
 
 function App() {
-
-
-
-  // show link to add template into their notion
-  // get dbID to join backend
-  // show how notion integration can be done
-  // show qr code to connect
-  // show connected
 
 
 
@@ -40,7 +29,7 @@ function App() {
                   </div>
                   <div className="text-gray-600">
                     <p className="font-medium text-lg">2. Notion DB and Integration</p>
-                    <p>  <a href="https://www.youtube.com/watch?v=fBAt-0n3gQA" class="text-purple-600 visited:text-purple-950 ...">
+                    <p>  <a href="https://www.youtube.com/watch?v=fBAt-0n3gQA" className="text-purple-600 visited:text-purple-950 ...">
                       LINK
                     </a> (Click on LINK for more details)</p>
                   </div>

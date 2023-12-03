@@ -43,7 +43,7 @@ let groupName = ''
 
 
 const llm = new ChatOpenAI({
-    openAIApiKey: process.env.OPENAI_API_KEY,
+    openAIApiKey: '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',
     modelName: 'gpt-3.5-turbo',
     temperature: 0.2
 });
@@ -103,6 +103,9 @@ io.on('connection', (socket) => {
                 const group = res.find((chat) => chat.name === groupName) // this need to take from user
                 console.log(group.id._serialized)
                 groupId = group.id._serialized
+                socket.emit("groupConnected", (groupId) => {
+                    message: groupId
+                })
             })
 
         });
@@ -182,7 +185,9 @@ io.on('connection', (socket) => {
                     ]
                 });
                 console.log(notionResp);
-
+                socket.emit('notionPage', (notionResp) => {
+                    notionResp
+                })
                 //    whatsappClient.sendMessage(groupId, response.url)
             }
 
