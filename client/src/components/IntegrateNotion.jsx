@@ -3,11 +3,12 @@ import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import axios from 'axios';
+import 'dotenv/config'
 
 
 export default function IntegrateNotion() {
     const navigate = useNavigate();
-    const endPoint = `http://localhost:3000/getNotionDetail`;
+    const endPoint = process.env.endPoint
     const dataRef = useRef({
         dbID: "",
         NOTION_TOKEN: "",
