@@ -1,0 +1,5 @@
+client/node_modules
+server/node_modules
+server/session-something
+server/.wwebjs_cache
+server/.github
