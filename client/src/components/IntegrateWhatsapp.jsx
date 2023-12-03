@@ -5,7 +5,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 
-let socket = io('http://ec2-51-20-67-201.eu-north-1.compute.amazonaws.com:80/', { transports: ['websocket', 'polling', 'flashsocket'] });
+let socket = io('https://ec2-51-20-67-201.eu-north-1.compute.amazonaws.com/', { transports: ['websocket', 'polling', 'flashsocket'] });
 
 
 export default function IntegrateWhatsapp() {
