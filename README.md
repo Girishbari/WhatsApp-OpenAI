@@ -39,6 +39,8 @@ working on it ⚒️⚒️⚒️⚒️
     ``` SERPAPI_API_KEY=asnasnaslkasnklnvcvc ```
 3. `cd server`
 4. `node index.js`
+5. `cd client`
+6. `npm run dev`
 
-## ➡️ docker <br />
-   1.  
+
+
