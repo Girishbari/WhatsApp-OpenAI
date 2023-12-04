@@ -38,9 +38,11 @@ working on it ⚒️⚒️⚒️⚒️
     ## Note replace SERAPI on ENV file
     ``` SERPAPI_API_KEY=somethinglikethis ```
 3. `cd server`
-4. `node index.js`
-5. `cd client`
-6. `npm run dev`
+4. `npm install`
+5. `node index.js`
+6. `cd client`
+7. `npm install`
+8. `npm run dev`
 
 ## Stacks used
 1. REACT
