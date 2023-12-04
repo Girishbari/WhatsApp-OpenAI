@@ -36,7 +36,7 @@ working on it ⚒️⚒️⚒️⚒️
     ## Note replace  OPEN AI APIKEY in code itself
     ``` const llm = new ChatOpenAI({ openAIApiKey: 'OPEN AI API KEY', modelName: 'gpt-3.5-turbo', temperature: 0.3 });```
     ## Note replace SERAPI on ENV file
-    ``` SERPAPI_API_KEY=asnasnaslkasnklnvcvc ```
+    ``` SERPAPI_API_KEY=somethinglikethis ```
 3. `cd server`
 4. `node index.js`
 5. `cd client`
