@@ -24,8 +24,7 @@ https://github.com/Girishbari/WhatsApp-OpenAI/assets/38005544/373265d2-d192-41cf
 
 ## ➡️ Visit website 🔗
 
-  [I'm an inline-style link with title](https://www.google.com "Google's Homepage")
-
+working on it ⚒️⚒️⚒️⚒️
 
 ## ➡️ Usual Way (Clone) <br />
 
@@ -40,4 +39,6 @@ https://github.com/Girishbari/WhatsApp-OpenAI/assets/38005544/373265d2-d192-41cf
     ``` SERPAPI_API_KEY=asnasnaslkasnklnvcvc ```
 3. `cd server`
 4. `node index.js`
-    
+
+## ➡️ docker <br />
+   1.  
