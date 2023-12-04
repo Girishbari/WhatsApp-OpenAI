@@ -7,7 +7,7 @@ import axios from 'axios';
 
 export default function IntegrateNotion() {
     const navigate = useNavigate();
-    const endPoint = 'https://ec2-51-20-67-201.eu-north-1.compute.amazonaws.com/getNotionDetail'
+    const endPoint = 'http://localhost:3000/getNotionDetail'
     const dataRef = useRef({
         dbID: "",
         NOTION_TOKEN: "",

@@ -23,3 +23,11 @@ dist-ssr
 *.sln
 *.sw?
 .env
+
+
+proxy_pass http://localhost:;
+proxy_http_version
+proxy set header Upgrade Shttp upgrade;
+proxy_set_header Connection
+proxy set_header Host shost;
+proxy cache bypass Shttp upgrade;

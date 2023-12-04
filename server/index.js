@@ -10,6 +10,7 @@ const { createServer } = require('node:http');
 const { Server } = require('socket.io');
 const qrcode = require('qrcode-terminal');
 const dotenv = require("dotenv");
+const path = require('path')
 
 dotenv.config();
 
@@ -18,7 +19,7 @@ const app = express();
 const server = createServer(app);
 const io = new Server(server, {
     cors: {
-        origin: "http://localhost:3000", // needs to change on AWS server
+        origin: "*", // needs to change on AWS server
         methods: ["GET", "POST"]
     }
 });
@@ -33,6 +34,10 @@ app.use(cors({
 
 
 
+app.use(express.static("public"));
+app.use("/*", (req, res) => {
+    res.sendFile(path.join(__dirname, "/public/index.html"))
+})
 
 
 let NOTION_TOKEN = '';
@@ -43,9 +48,9 @@ let groupName = ''
 
 
 const llm = new ChatOpenAI({
-    openAIApiKey: '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',
+    openAIApiKey: process.env.OPENAI_API_KEY,
     modelName: 'gpt-3.5-turbo',
-    temperature: 0.2
+    temperature: 0.3
 });
 const tools = [new SerpAPI()]
 const str = "a Person is a Youtuber which makes content around software and coding Give him good Content title, Good Resources links for research on topic: "

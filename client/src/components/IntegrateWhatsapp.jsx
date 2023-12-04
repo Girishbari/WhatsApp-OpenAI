@@ -5,7 +5,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 
-let socket = io('https://ec2-51-20-67-201.eu-north-1.compute.amazonaws.com/', { transports: ['websocket', 'polling', 'flashsocket'] });
+let socket = io('http://localhost:3000', { transports: ['websocket', 'polling', 'flashsocket'] });
 
 
 export default function IntegrateWhatsapp() {
@@ -42,7 +42,10 @@ export default function IntegrateWhatsapp() {
 
     })
 
-
+    socket.on('notionPage', (notionResp) => {
+        const { url } = notionResp;
+        setUrlNotion(url)
+    })
 
     const handleSubmit = () => {
         setDisable(true)
