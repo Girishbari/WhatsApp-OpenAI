@@ -101,8 +101,7 @@ io.on('connection', (socket) => {
             console.log('Client is ready!');
             socket.emit("ready", { message: "Client is ready!" });
             whatsappClient.getChats().then((res) => {
-                const group = res.find((chat) => chat.name === groupName) // this need to take from user
-                console.log(group.id._serialized)
+                const group = res.find((chat) => chat.name === 'Notes') // this need to take from user
                 groupId = group.id._serialized
                 socket.emit("groupConnected", (groupId) => {
                     message: groupId
@@ -189,7 +188,6 @@ io.on('connection', (socket) => {
                 socket.emit('notionPage', (notionResp) => {
                     notionResp
                 })
-                //    whatsappClient.sendMessage(groupId, response.url)
             }
 
         })
