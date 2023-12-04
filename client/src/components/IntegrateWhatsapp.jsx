@@ -27,7 +27,7 @@ export default function IntegrateWhatsapp() {
             position: toast.POSITION.TOP_CENTER,
             draggable: false
         });
-        toast.dismiss(toastId)
+        toast.dismiss(toastId.current)
 
     })
 
