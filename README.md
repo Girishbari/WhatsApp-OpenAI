@@ -42,5 +42,11 @@ working on it ⚒️⚒️⚒️⚒️
 5. `cd client`
 6. `npm run dev`
 
+## Stacks used
+1. REACT
+2. SOCKET.IO
+3. WWEB.JS
+4. Langchain (for SerAPI and OPENAI)
+5. EXPRESS
 
 
