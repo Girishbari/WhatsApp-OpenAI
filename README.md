@@ -33,7 +33,7 @@ working on it ⚒️⚒️⚒️⚒️
     A. OPEN AI https://platform.openai.com/api-keys
     B. SERAPI https://serpapi.com/
 
-    ## Note replace  OPEN AI APIKEY on code itself
+    ## Note replace  OPEN AI APIKEY in code itself
     ``` const llm = new ChatOpenAI({ openAIApiKey: 'OPEN AI API KEY', modelName: 'gpt-3.5-turbo', temperature: 0.3 });```
     ## Note replace SERAPI on ENV file
     ``` SERPAPI_API_KEY=asnasnaslkasnklnvcvc ```
