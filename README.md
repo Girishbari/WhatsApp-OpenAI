@@ -38,5 +38,6 @@ https://github.com/Girishbari/WhatsApp-OpenAI/assets/38005544/373265d2-d192-41cf
     ``` const llm = new ChatOpenAI({ openAIApiKey: 'OPEN AI API KEY', modelName: 'gpt-3.5-turbo', temperature: 0.3 });```
     ## Note replace SERAPI on ENV file
     ``` SERPAPI_API_KEY=asnasnaslkasnklnvcvc ```
-
+3. `cd server`
+4. `node index.js`
     
