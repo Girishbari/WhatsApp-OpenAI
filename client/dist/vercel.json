@@ -1,9 +1,0 @@
-{
-  "routes": [
-    {
-      "src": "/api/(.*)",
-      "dest": "http://ec2-51-20-67-201.eu-north-1.compute.amazonaws.com:3000",
-      "methods": ["GET", "POST", "PUT", "DELETE"]
-    }
-  ]
-}
