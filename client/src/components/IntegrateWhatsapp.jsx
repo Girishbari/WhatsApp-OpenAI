@@ -27,7 +27,6 @@ export default function IntegrateWhatsapp() {
             position: toast.POSITION.TOP_CENTER,
             draggable: false
         });
-        toast.dismiss(toastId.current)
 
     })
 
@@ -38,6 +37,8 @@ export default function IntegrateWhatsapp() {
                 position: toast.POSITION.TOP_CENTER,
                 draggable: false
             });
+            toast.dismiss(toastId.current)
+
         }, 3000)
 
     })
